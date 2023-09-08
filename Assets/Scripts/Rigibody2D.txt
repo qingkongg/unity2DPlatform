@@ -1,0 +1,11 @@
+rigibody是unity和碰撞器collider的一个组件系统，使用collider的移动时必须使用rigibody，collider会跟随rigibody进行移动，同时，rigibody会避免同一物体的多个collider之间发生作用，利用rigibody的velocity（速度向量）可以使collider移动更合理，如果只是使用传统的transform组件会先移动transform再移动collider然后再更新collider，会导致奇怪的行为，另外，rigibody也可以控制物体所能够表现出来的物理属性
+body type 它有三个可选项：Dynamic（动态，默认）、Kinematic（运动学）、Static（静态）。
+
+这三种类型确定了不同的运动行为（移动和旋转）和碰撞方式。
+第一格使激活所有物理属性，第二个无限质量，不受力的作用，但是可以被代码输入控制移动，第三个则绝对静止，三个根据运算所需要的性能不同
+
+两个摩擦是移动摩擦和旋转摩擦（阻力）
+collision detection 控制离散或者连续的碰撞检测
+simulated可以手动的控制物理属性是否起作用，可以更好地控制性能
+interpolate 控制物体运动方式
+sleeping mode 推荐只有主角never sleep，其他的都有利用其它方式唤醒或者睡眠
